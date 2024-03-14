@@ -60,10 +60,6 @@ class BaseTrainer(transformers.Trainer):
         super().__init__(*args, **kwargs)
         self.preprocess_logits_for_metrics = preprocess_logits_for_metrics
         self.compute_metrics = self.compute_metrics_func
-        self.metric_accuracy = evaluate.load("accuracy")
-        self.metric_bleu = evaluate.load("sacrebleu")
-        # self.metric_bertscore = evaluate.load("bertscore")
-        self.metric_rouge = evaluate.load("rouge")
         self.additional_metrics = []
 
         self.gen_kwargs = {
