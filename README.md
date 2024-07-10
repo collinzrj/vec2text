@@ -324,8 +324,16 @@ trainer.evaluate(
 )
 ```
 
+## Troubleshooting
 
-### Citations
+By default, temporary files generated during dataset processing are stored in the `/tmp` folder. If the filesystem mounted on this folder does not have sufficient space, you may encounter a No space left on device error. To avoid this, you can specify a different folder for temporary files by setting the `TMPDIR` environment variable.
+
+```
+export TMPDIR=/path/to/your/tmpdir
+```
+
+
+## Citations
 
 if you benefit from the code or the research, please cite our papers! 
 
